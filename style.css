@@ -5,6 +5,10 @@
   font-family: "Inter", sans-serif;
 }
 
+html {
+  background: #05070e;
+}
+
 body {
   height: 100vh;
   display: flex;
@@ -12,11 +16,19 @@ body {
   align-items: center;
   background: radial-gradient(circle at top, #0d2a4f 0%, #05070e 60%, #02040a 100%);
   overflow: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* original glow (NO CHANGES) */
+/* FIXED BLOBS (no movement, no flicker) */
+.glow,
+.glow2 {
+  position: fixed;
+  pointer-events: none;
+}
+
 .glow {
-  position: absolute;
   width: 700px;
   height: 700px;
   background: radial-gradient(circle, rgba(0, 140, 255, 0.28), transparent 70%);
@@ -26,7 +38,6 @@ body {
 }
 
 .glow2 {
-  position: absolute;
   width: 800px;
   height: 800px;
   background: radial-gradient(circle, rgba(0, 80, 255, 0.22), transparent 70%);
