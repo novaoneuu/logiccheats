@@ -14,6 +14,7 @@ body {
   overflow: hidden;
 }
 
+/* background glow */
 .glow {
   position: absolute;
   width: 700px;
@@ -35,17 +36,17 @@ body {
   z-index: 2;
 }
 
+/* 🔥 TITLE GLOW BOOSTED */
 .title {
   font-size: 85px;
   font-weight: 800;
   color: #0077ff;
   margin-bottom: 85px;
 
-  opacity: 0;
-  transform: translateY(40px);
-  filter: blur(6px);
-
-  animation: popIn 0.5s ease-out forwards;
+  text-shadow:
+    0 0 10px rgba(0, 119, 255, 0.6),
+    0 0 25px rgba(0, 119, 255, 0.4),
+    0 0 60px rgba(0, 119, 255, 0.25);
 }
 
 .buttons {
@@ -53,21 +54,6 @@ body {
   justify-content: center;
   gap: 22px;
   flex-wrap: wrap;
-
-  opacity: 0;
-  transform: translateY(40px);
-  filter: blur(6px);
-
-  animation: popIn 0.5s ease-out forwards;
-  animation-delay: 0.12s;
-}
-
-@keyframes popIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
 }
 
 .btn {
@@ -94,9 +80,11 @@ body {
 .btn-explore {
   background: #0077ff;
   color: #111;
+  box-shadow: 0 0 20px rgba(0, 119, 255, 0.35);
 }
 
 .btn-support {
   background: rgba(10, 10, 10, 0.9);
   color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
