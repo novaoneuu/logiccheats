@@ -40,7 +40,7 @@ body {
   z-index: 2;
 }
 
-/* ===== ANIMATION (AUTO ON LOAD) ===== */
+/* ===== ANIMATION ===== */
 .title {
   font-size: 85px;
   font-weight: 800;
@@ -48,7 +48,7 @@ body {
   margin-bottom: 85px;
 
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(45px); /* 👈 START LOWER */
   filter: blur(6px);
 
   animation: popIn 0.5s ease-out forwards;
@@ -61,7 +61,7 @@ body {
   flex-wrap: wrap;
 
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(45px); /* 👈 START LOWER */
   filter: blur(6px);
 
   animation: popIn 0.5s ease-out forwards;
