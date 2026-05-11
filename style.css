@@ -14,16 +14,12 @@ body {
   overflow: hidden;
 }
 
-/* glow (NO animation now) */
 .glow {
   position: absolute;
   width: 700px;
   height: 700px;
   background: radial-gradient(circle, rgba(0, 140, 255, 0.28), transparent 70%);
   filter: blur(90px);
-  top: -250px;
-  left: -250px;
-  transition: transform 0.15s linear;
 }
 
 .glow2 {
@@ -32,12 +28,8 @@ body {
   height: 800px;
   background: radial-gradient(circle, rgba(0, 80, 255, 0.22), transparent 70%);
   filter: blur(110px);
-  bottom: -300px;
-  right: -300px;
-  transition: transform 0.15s linear;
 }
 
-/* content */
 .container {
   text-align: center;
   z-index: 2;
@@ -48,6 +40,12 @@ body {
   font-weight: 800;
   color: #0077ff;
   margin-bottom: 85px;
+
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(6px);
+
+  animation: popIn 0.5s ease-out forwards;
 }
 
 .buttons {
@@ -55,9 +53,23 @@ body {
   justify-content: center;
   gap: 22px;
   flex-wrap: wrap;
+
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(6px);
+
+  animation: popIn 0.5s ease-out forwards;
+  animation-delay: 0.12s;
 }
 
-/* buttons */
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
 .btn {
   width: 190px;
   height: 52px;
@@ -82,15 +94,9 @@ body {
 .btn-explore {
   background: #0077ff;
   color: #111;
-  box-shadow: 0 0 14px rgba(0, 119, 255, 0.25);
-}
-
-.btn-explore:hover {
-  box-shadow: 0 0 32px rgba(0, 119, 255, 0.6);
 }
 
 .btn-support {
   background: rgba(10, 10, 10, 0.9);
   color: white;
-  box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
 }
