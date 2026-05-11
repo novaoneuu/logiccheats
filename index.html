@@ -28,23 +28,23 @@
 
     .glow {
       position: absolute;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(120,200,255,0.25), transparent 70%);
-      filter: blur(40px);
-      top: -150px;
-      left: -150px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 170, 255, 0.35), transparent 70%);
+      filter: blur(60px);
+      top: -200px;
+      left: -200px;
       pointer-events: none;
     }
 
     .glow2 {
       position: absolute;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(0,0,0,0.6), transparent 70%);
-      filter: blur(60px);
-      bottom: -200px;
-      right: -200px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(0, 90, 255, 0.25), transparent 70%);
+      filter: blur(80px);
+      bottom: -250px;
+      right: -250px;
       pointer-events: none;
     }
 
@@ -58,20 +58,14 @@
     }
 
     h1 {
-      font-size: 80px;
+      font-size: 85px;
       font-weight: 800;
       letter-spacing: -2px;
-      background: linear-gradient(90deg, #86d6ff, #0a0a0a);
+      background: linear-gradient(90deg, #00c8ff, #0077ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 18px;
-    }
-
-    .subtitle {
-      font-size: 16px;
-      color: #2b2f38;
-      font-weight: 600;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
+      text-shadow: 0px 0px 40px rgba(0, 170, 255, 0.25);
     }
 
     .buttons {
@@ -100,14 +94,14 @@
     }
 
     .btn-explore {
-      background: #86d6ff;
+      background: #00c8ff;
       color: #111111;
     }
 
     .btn-support {
-      background: #0a0a0a;
+      background: rgba(10, 10, 10, 0.8);
       color: #ffffff;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(0, 200, 255, 0.25);
     }
 
     .arrow {
@@ -115,29 +109,9 @@
       font-weight: 800;
     }
 
-    .card {
-      margin-top: 50px;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 22px;
-      padding: 22px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0px 20px 50px rgba(0,0,0,0.55);
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .card p {
-      color: #2b2f38;
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.6;
-    }
-
     @media (max-width: 600px) {
       h1 {
-        font-size: 52px;
+        font-size: 55px;
       }
 
       .btn {
@@ -158,7 +132,6 @@
 
   <div class="container">
     <h1>Logic Cheats</h1>
-    <div class="subtitle">clean tools. smart shortcuts. zero nonsense.</div>
 
     <div class="buttons">
       <button class="btn btn-explore" onclick="window.location.href='#explore'">
@@ -168,13 +141,6 @@
       <button class="btn btn-support" onclick="window.location.href='#support'">
         Support
       </button>
-    </div>
-
-    <div class="card">
-      <p>
-        Welcome to Logic Cheats — a sleek hub built for speed and simplicity.
-        Explore resources, tools, and support options in one clean space.
-      </p>
     </div>
   </div>
 </body>
