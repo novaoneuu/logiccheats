@@ -14,7 +14,7 @@ body {
   overflow: hidden;
 }
 
-/* glow */
+/* ===== BACKGROUND GLOWS (ANIMATED) ===== */
 .glow {
   position: absolute;
   width: 700px;
@@ -23,6 +23,8 @@ body {
   filter: blur(90px);
   top: -250px;
   left: -250px;
+
+  animation: drift1 12s ease-in-out infinite;
 }
 
 .glow2 {
@@ -33,14 +35,30 @@ body {
   filter: blur(110px);
   bottom: -300px;
   right: -300px;
+
+  animation: drift2 14s ease-in-out infinite;
 }
 
+/* subtle movement */
+@keyframes drift1 {
+  0%   { transform: translate(0px, 0px); }
+  50%  { transform: translate(40px, 30px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+@keyframes drift2 {
+  0%   { transform: translate(0px, 0px); }
+  50%  { transform: translate(-35px, -25px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+/* ===== CONTENT ===== */
 .container {
   text-align: center;
   z-index: 2;
 }
 
-/* ===== POP IN ===== */
+/* pop-in */
 .title {
   font-size: 85px;
   font-weight: 800;
