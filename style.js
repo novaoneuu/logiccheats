@@ -1,17 +1,14 @@
+const glow = document.querySelector(".glow");
+const glow2 = document.querySelector(".glow2");
+
+document.addEventListener("mousemove", (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+  glow.style.transform = `translate(${x}px, ${y}px)`;
+  glow2.style.transform = `translate(${-x}px, ${-y}px)`;
+});
+
 function go(path) {
   window.location.href = path;
 }
-
-window.addEventListener("load", () => {
-  const title = document.querySelector(".title");
-  const buttons = document.querySelector(".buttons");
-
-  // force restart animation safely
-  title.classList.remove("play");
-  buttons.classList.remove("play");
-
-  void title.offsetWidth;
-
-  title.classList.add("play");
-  buttons.classList.add("play");
-});
