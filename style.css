@@ -14,7 +14,7 @@ body {
   overflow: hidden;
 }
 
-/* background glow */
+/* original glow (NO CHANGES) */
 .glow {
   position: absolute;
   width: 700px;
