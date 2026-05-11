@@ -14,7 +14,7 @@ body {
   overflow: hidden;
 }
 
-/* background glow */
+/* glow background */
 .glow {
   position: absolute;
   width: 700px;
@@ -41,15 +41,15 @@ body {
   z-index: 2;
 }
 
-/* ===== ANIMATION SYSTEM ===== */
+/* SAFE DEFAULT STATE (VISIBLE ALWAYS) */
 .title,
 .buttons {
-  opacity: 0;
-  transform: translateY(20px);
-  filter: blur(6px);
+  opacity: 1;
+  transform: none;
+  filter: none;
 }
 
-/* JS adds this class */
+/* animation only when class is added */
 .play {
   animation: popIn 0.5s ease-out forwards;
 }
@@ -59,7 +59,12 @@ body {
 }
 
 @keyframes popIn {
-  to {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(6px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
