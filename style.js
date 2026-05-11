@@ -6,13 +6,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const title = document.querySelector(".title");
   const buttons = document.querySelector(".buttons");
 
-  title.style.animation = "none";
-  buttons.style.animation = "none";
+  title.classList.remove("play");
+  buttons.classList.remove("play");
 
-  // force reflow (this is the magic fix)
-  void title.offsetWidth;
+  void title.offsetWidth; // force reset
 
-  title.style.animation = "popIn 0.5s ease-out forwards";
-  buttons.style.animation = "popIn 0.5s ease-out forwards";
-  buttons.style.animationDelay = "0.12s";
+  title.classList.add("play");
+  buttons.classList.add("play");
 });
