@@ -40,26 +40,20 @@ body {
   z-index: 2;
 }
 
-/* ===== ENTRY WRAPPER (handles pop-in ONLY) ===== */
-.title-wrapper {
-  opacity: 0;
-  transform: translateY(45px);
-  filter: blur(6px);
-  animation: popIn 0.5s ease-out forwards;
-}
-
-/* ===== TITLE (handles FLOAT ONLY) ===== */
+/* ===== POP IN ===== */
 .title {
   font-size: 85px;
   font-weight: 800;
   color: #0077ff;
   margin-bottom: 85px;
 
-  animation: floatDrift 7s ease-in-out infinite;
-  animation-delay: 1.5s;
+  opacity: 0;
+  transform: translateY(45px);
+  filter: blur(6px);
+
+  animation: popIn 0.5s ease-out forwards;
 }
 
-/* buttons */
 .buttons {
   display: flex;
   justify-content: center;
@@ -74,31 +68,11 @@ body {
   animation-delay: 0.12s;
 }
 
-/* entry animation */
 @keyframes popIn {
   to {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
-  }
-}
-
-/* REAL floating motion */
-@keyframes floatDrift {
-  0% {
-    transform: translate(0px, 0px);
-  }
-  25% {
-    transform: translate(1.5px, -1px);
-  }
-  50% {
-    transform: translate(-1.2px, 0.8px);
-  }
-  75% {
-    transform: translate(1px, 1.2px);
-  }
-  100% {
-    transform: translate(0px, 0px);
   }
 }
 
