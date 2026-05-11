@@ -22,38 +22,35 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #0a1020, #0d2346, #060b16);
+      background: radial-gradient(circle at top, #0d2a4f 0%, #05070e 60%, #02040a 100%);
       overflow: hidden;
+      position: relative;
     }
 
     .glow {
       position: absolute;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(0, 120, 255, 0.28), transparent 70%);
-      filter: blur(70px);
-      top: -200px;
-      left: -200px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(0, 140, 255, 0.28), transparent 70%);
+      filter: blur(90px);
+      top: -250px;
+      left: -250px;
       pointer-events: none;
     }
 
     .glow2 {
       position: absolute;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(0, 70, 200, 0.25), transparent 70%);
-      filter: blur(90px);
-      bottom: -250px;
-      right: -250px;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(0, 80, 255, 0.22), transparent 70%);
+      filter: blur(110px);
+      bottom: -300px;
+      right: -300px;
       pointer-events: none;
     }
 
     .container {
       text-align: center;
-      padding: 60px 30px;
-      width: 100%;
-      max-width: 900px;
-      position: relative;
       z-index: 2;
     }
 
@@ -62,7 +59,7 @@
       font-weight: 800;
       letter-spacing: -2px;
       color: #0077ff;
-      margin-bottom: 80px;
+      margin-bottom: 85px;
       text-shadow: 0px 0px 45px rgba(0, 120, 255, 0.25);
     }
 
@@ -73,54 +70,66 @@
       flex-wrap: wrap;
     }
 
-<style>
-  .btn {
-    width: 190px;
-    height: 52px;
-    justify-content: center;
-    padding: 0;
-    border-radius: 14px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.35s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: none;
-  }
+    .btn {
+      width: 190px;
+      height: 52px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
 
-  .btn:hover {
-    transform: scale(1.08);
-  }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
 
-  /* EXPLORE (blue main glow) */
-  .btn-explore {
-    background: #0077ff;
-    color: #111;
-    box-shadow: 0 0 14px rgba(0, 119, 255, 0.25);
-  }
+      cursor: pointer;
+      border: none;
 
-  .btn-explore:hover {
-    box-shadow: 0 0 30px rgba(0, 119, 255, 0.6);
-  }
+      transition: transform 0.25s ease, box-shadow 0.35s ease;
+    }
 
-  /* SUPPORT (separate dark glow, no blue influence) */
-  .btn-support {
-    background: rgba(10, 10, 10, 0.9);
-    color: #ffffff;
-    box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
-  }
+    .btn:hover {
+      transform: scale(1.08);
+    }
 
-  .btn-support:hover {
-    box-shadow: 0 0 28px rgba(0, 0, 0, 0.85);
-  }
+    /* Explore */
+    .btn-explore {
+      background: #0077ff;
+      color: #111;
+      box-shadow: 0 0 14px rgba(0, 119, 255, 0.25);
+    }
 
-  .arrow {
-    font-size: 18px;
-    font-weight: 800;
-  }
-</style>
+    .btn-explore:hover {
+      box-shadow: 0 0 32px rgba(0, 119, 255, 0.6);
+    }
+
+    /* Support */
+    .btn-support {
+      background: rgba(10, 10, 10, 0.9);
+      color: #fff;
+      box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-support:hover {
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.85);
+    }
+
+    .arrow {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 55px;
+        margin-bottom: 70px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -131,13 +140,13 @@
     <h1>Logic Cheats</h1>
 
     <div class="buttons">
-  <button class="btn btn-explore" onclick="window.location.href='/home'">
-    Explore <span class="arrow">→</span>
-  </button>
+      <button class="btn btn-explore" onclick="window.location.href='/home'">
+        Explore <span class="arrow">→</span>
+      </button>
 
-  <button class="btn btn-support" onclick="window.location.href='/support'">
-    Support
-  </button>
+      <button class="btn btn-support" onclick="window.location.href='/support'">
+        Support
+      </button>
     </div>
   </div>
 </body>
