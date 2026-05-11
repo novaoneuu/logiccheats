@@ -23,6 +23,7 @@ body {
   filter: blur(90px);
   top: -250px;
   left: -250px;
+  transition: transform 0.15s linear;
 }
 
 .glow2 {
@@ -33,6 +34,7 @@ body {
   filter: blur(110px);
   bottom: -300px;
   right: -300px;
+  transition: transform 0.15s linear;
 }
 
 /* content */
