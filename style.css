@@ -14,17 +14,15 @@ body {
   overflow: hidden;
 }
 
-/* ===== BACKGROUND GLOWS (MORE NOTICEABLE MOTION) ===== */
+/* ===== MOVING GLOWS ===== */
 .glow {
   position: absolute;
   width: 700px;
   height: 700px;
   background: radial-gradient(circle, rgba(0, 140, 255, 0.35), transparent 70%);
   filter: blur(90px);
-  top: -250px;
-  left: -250px;
 
-  animation: drift1 10s ease-in-out infinite;
+  animation: move1 6s linear infinite;
 }
 
 .glow2 {
@@ -33,46 +31,44 @@ body {
   height: 800px;
   background: radial-gradient(circle, rgba(0, 80, 255, 0.28), transparent 70%);
   filter: blur(110px);
-  bottom: -300px;
-  right: -300px;
 
-  animation: drift2 12s ease-in-out infinite;
+  animation: move2 7.5s linear infinite;
 }
 
-/* REAL VISIBLE MOTION */
-@keyframes drift1 {
+/* REAL LOOPING MOVEMENT */
+@keyframes move1 {
   0% {
-    transform: translate(0px, 0px) scale(1);
+    transform: translate(-200px, -150px);
   }
   25% {
-    transform: translate(60px, 40px) scale(1.05);
+    transform: translate(300px, -100px);
   }
   50% {
-    transform: translate(20px, 80px) scale(1.1);
+    transform: translate(200px, 250px);
   }
   75% {
-    transform: translate(-40px, 30px) scale(1.05);
+    transform: translate(-250px, 200px);
   }
   100% {
-    transform: translate(0px, 0px) scale(1);
+    transform: translate(-200px, -150px);
   }
 }
 
-@keyframes drift2 {
+@keyframes move2 {
   0% {
-    transform: translate(0px, 0px) scale(1);
+    transform: translate(250px, 200px);
   }
   25% {
-    transform: translate(-50px, -30px) scale(1.08);
+    transform: translate(-300px, 150px);
   }
   50% {
-    transform: translate(-80px, 10px) scale(1.12);
+    transform: translate(-200px, -250px);
   }
   75% {
-    transform: translate(-30px, -60px) scale(1.05);
+    transform: translate(300px, -200px);
   }
   100% {
-    transform: translate(0px, 0px) scale(1);
+    transform: translate(250px, 200px);
   }
 }
 
