@@ -1,1 +1,71 @@
+export default function LogicCheats() {
+  return (
+    <div className="min-h-screen bg-black text-white flex flex-col">
+      {/* Navbar */}
+      <header className="flex items-center justify-between px-6 py-4 border-b border-white/10">
+        <h1 className="text-xl font-bold tracking-wide">Logic Cheats</h1>
+        <nav className="flex gap-6 text-sm text-white/70">
+          <a href="#tools" className="hover:text-white">Tools</a>
+          <a href="#guides" className="hover:text-white">Guides</a>
+          <a href="#about" className="hover:text-white">About</a>
+        </nav>
+      </header>
 
+      {/* Hero */}
+      <main className="flex-1 flex flex-col items-center justify-center text-center px-6">
+        <h2 className="text-5xl font-extrabold mb-4">Logic is the advantage</h2>
+        <p className="text-white/70 max-w-xl mb-8">
+          A clean hub for tools, guides, and smart strategies. No noise. Just logic.
+        </p>
+        <div className="flex gap-4">
+          <a href="#tools" className="px-6 py-3 bg-white text-black font-semibold rounded-xl">
+            Explore Tools
+          </a>
+          <a href="#guides" className="px-6 py-3 border border-white/20 rounded-xl">
+            Learn More
+          </a>
+        </div>
+      </main>
+
+      {/* Sections */}
+      <section id="tools" className="px-6 py-16 border-t border-white/10">
+        <h3 className="text-2xl font-bold mb-6">Tools</h3>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="p-5 border border-white/10 rounded-xl">
+            <h4 className="font-semibold mb-2">Logic Analyzer</h4>
+            <p className="text-white/60 text-sm">Break down systems and find patterns fast.</p>
+          </div>
+          <div className="p-5 border border-white/10 rounded-xl">
+            <h4 className="font-semibold mb-2">Strategy Builder</h4>
+            <p className="text-white/60 text-sm">Create optimized approaches for any game or system.</p>
+          </div>
+          <div className="p-5 border border-white/10 rounded-xl">
+            <h4 className="font-semibold mb-2">Quick Sim</h4>
+            <p className="text-white/60 text-sm">Test outcomes before you commit.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="guides" className="px-6 py-16 border-t border-white/10">
+        <h3 className="text-2xl font-bold mb-6">Guides</h3>
+        <ul className="space-y-3 text-white/70">
+          <li>• Thinking in systems instead of outcomes</li>
+          <li>• How to spot patterns faster</li>
+          <li>• Building decision logic under pressure</li>
+        </ul>
+      </section>
+
+      <section id="about" className="px-6 py-16 border-t border-white/10 text-center">
+        <h3 className="text-2xl font-bold mb-4">About Logic Cheats</h3>
+        <p className="text-white/60 max-w-2xl mx-auto">
+          This site is built around one idea: better thinking wins more than shortcuts.
+          Everything here focuses on clarity, strategy, and logic.
+        </p>
+      </section>
+
+      <footer className="px-6 py-6 border-t border-white/10 text-center text-white/40 text-sm">
+        © {new Date().getFullYear()} Logic Cheats
+      </footer>
+    </div>
+  );
+}
