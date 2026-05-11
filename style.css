@@ -14,82 +14,38 @@ body {
   overflow: hidden;
 }
 
-/* ===== BACKGROUND GLOWS ===== */
+/* glow (NO animation now) */
 .glow {
   position: absolute;
-  width: 900px;
-  height: 900px;
-  background: radial-gradient(circle, rgba(0, 140, 255, 0.32), transparent 70%);
-  filter: blur(110px);
-
-  animation: orbit1 10s linear infinite;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0, 140, 255, 0.28), transparent 70%);
+  filter: blur(90px);
+  top: -250px;
+  left: -250px;
 }
 
 .glow2 {
   position: absolute;
-  width: 1000px;
-  height: 1000px;
-  background: radial-gradient(circle, rgba(0, 80, 255, 0.25), transparent 70%);
-  filter: blur(130px);
-
-  animation: orbit2 13s linear infinite;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(0, 80, 255, 0.22), transparent 70%);
+  filter: blur(110px);
+  bottom: -300px;
+  right: -300px;
 }
 
-/* ===== TRUE CIRCULAR ORBIT MOTION ===== */
-@keyframes orbit1 {
-  0% {
-    transform: translate(-350px, -250px);
-  }
-  25% {
-    transform: translate(350px, -250px);
-  }
-  50% {
-    transform: translate(350px, 250px);
-  }
-  75% {
-    transform: translate(-350px, 250px);
-  }
-  100% {
-    transform: translate(-350px, -250px);
-  }
-}
-
-@keyframes orbit2 {
-  0% {
-    transform: translate(400px, 300px);
-  }
-  25% {
-    transform: translate(-400px, 300px);
-  }
-  50% {
-    transform: translate(-400px, -300px);
-  }
-  75% {
-    transform: translate(400px, -300px);
-  }
-  100% {
-    transform: translate(400px, 300px);
-  }
-}
-
-/* ===== CONTENT ===== */
+/* content */
 .container {
   text-align: center;
   z-index: 2;
 }
 
-/* pop-in */
 .title {
   font-size: 85px;
   font-weight: 800;
   color: #0077ff;
   margin-bottom: 85px;
-
-  opacity: 0;
-  transform: translateY(45px);
-  filter: blur(6px);
-
-  animation: popIn 0.5s ease-out forwards;
 }
 
 .buttons {
@@ -97,21 +53,6 @@ body {
   justify-content: center;
   gap: 22px;
   flex-wrap: wrap;
-
-  opacity: 0;
-  transform: translateY(45px);
-  filter: blur(6px);
-
-  animation: popIn 0.5s ease-out forwards;
-  animation-delay: 0.12s;
-}
-
-@keyframes popIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
 }
 
 /* buttons */
@@ -150,8 +91,4 @@ body {
   background: rgba(10, 10, 10, 0.9);
   color: white;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
-}
-
-.btn-support:hover {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.85);
 }
