@@ -14,6 +14,7 @@ body {
   overflow: hidden;
 }
 
+/* glow */
 .glow {
   position: absolute;
   width: 700px;
@@ -39,41 +40,18 @@ body {
   z-index: 2;
 }
 
-/* ALWAYS VISIBLE */
-.title,
-.buttons {
-  opacity: 1;
-  transform: none;
-  filter: none;
-}
-
-/* animation class (safe) */
-.play {
-  animation: popIn 0.5s ease-out;
-}
-
-.buttons.play {
-  animation-delay: 0.12s;
-}
-
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-    filter: blur(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-
+/* ===== ANIMATION (AUTO ON LOAD) ===== */
 .title {
   font-size: 85px;
   font-weight: 800;
   color: #0077ff;
   margin-bottom: 85px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(6px);
+
+  animation: popIn 0.5s ease-out forwards;
 }
 
 .buttons {
@@ -81,8 +59,24 @@ body {
   justify-content: center;
   gap: 22px;
   flex-wrap: wrap;
+
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(6px);
+
+  animation: popIn 0.5s ease-out forwards;
+  animation-delay: 0.12s;
 }
 
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* buttons */
 .btn {
   width: 190px;
   height: 52px;
@@ -104,6 +98,7 @@ body {
   transform: scale(1.08);
 }
 
+/* explore */
 .btn-explore {
   background: #0077ff;
   color: #111;
@@ -114,6 +109,7 @@ body {
   box-shadow: 0 0 32px rgba(0, 119, 255, 0.6);
 }
 
+/* support */
 .btn-support {
   background: rgba(10, 10, 10, 0.9);
   color: white;
