@@ -39,7 +39,7 @@ body {
   z-index: 2;
 }
 
-/* ALWAYS VISIBLE BASE */
+/* ALWAYS VISIBLE */
 .title,
 .buttons {
   opacity: 1;
@@ -47,9 +47,9 @@ body {
   filter: none;
 }
 
-/* animation trigger */
+/* animation class (safe) */
 .play {
-  animation: popIn 0.5s ease-out forwards;
+  animation: popIn 0.5s ease-out;
 }
 
 .buttons.play {
@@ -57,12 +57,12 @@ body {
 }
 
 @keyframes popIn {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(20px);
     filter: blur(6px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
