@@ -9,127 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Inter", sans-serif;
-    }
-
-    body {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: radial-gradient(circle at top, #0d2a4f 0%, #05070e 60%, #02040a 100%);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .glow {
-      position: absolute;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(0, 140, 255, 0.28), transparent 70%);
-      filter: blur(90px);
-      top: -250px;
-      left: -250px;
-      pointer-events: none;
-    }
-
-    .glow2 {
-      position: absolute;
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, rgba(0, 80, 255, 0.22), transparent 70%);
-      filter: blur(110px);
-      bottom: -300px;
-      right: -300px;
-      pointer-events: none;
-    }
-
-    .container {
-      text-align: center;
-      z-index: 2;
-    }
-
-    h1 {
-      font-size: 85px;
-      font-weight: 800;
-      letter-spacing: -2px;
-      color: #0077ff;
-      margin-bottom: 85px;
-      text-shadow: 0px 0px 45px rgba(0, 120, 255, 0.25);
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      width: 190px;
-      height: 52px;
-      border-radius: 14px;
-      font-size: 16px;
-      font-weight: 700;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-
-      cursor: pointer;
-      border: none;
-
-      transition: transform 0.25s ease, box-shadow 0.35s ease;
-    }
-
-    .btn:hover {
-      transform: scale(1.08);
-    }
-
-    /* Explore */
-    .btn-explore {
-      background: #0077ff;
-      color: #111;
-      box-shadow: 0 0 14px rgba(0, 119, 255, 0.25);
-    }
-
-    .btn-explore:hover {
-      box-shadow: 0 0 32px rgba(0, 119, 255, 0.6);
-    }
-
-    /* Support */
-    .btn-support {
-      background: rgba(10, 10, 10, 0.9);
-      color: #fff;
-      box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
-    }
-
-    .btn-support:hover {
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.85);
-    }
-
-    .arrow {
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 55px;
-        margin-bottom: 70px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -137,17 +17,19 @@
   <div class="glow2"></div>
 
   <div class="container">
-    <h1>Logic Cheats</h1>
+    <h1 class="title">Logic Cheats</h1>
 
     <div class="buttons">
-      <button class="btn btn-explore" onclick="window.location.href='/home'">
+      <button class="btn btn-explore" onclick="go('/home')">
         Explore <span class="arrow">→</span>
       </button>
 
-      <button class="btn btn-support" onclick="window.location.href='/support'">
+      <button class="btn btn-support" onclick="go('/support')">
         Support
       </button>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
