@@ -1,1 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
 
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #0d2a4f 0%, #05070e 60%, #02040a 100%);
+  overflow: hidden;
+}
+
+/* background glow */
+.glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(0, 140, 255, 0.28), transparent 70%);
+  filter: blur(90px);
+  top: -250px;
+  left: -250px;
+}
+
+.glow2 {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(0, 80, 255, 0.22), transparent 70%);
+  filter: blur(110px);
+  bottom: -300px;
+  right: -300px;
+}
+
+/* layout */
+.container {
+  text-align: center;
+  z-index: 2;
+}
+
+/* ===== LOAD ANIMATION ===== */
+.title, .buttons {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(6px);
+  animation: popIn 0.5s ease-out forwards;
+}
+
+.buttons {
+  animation-delay: 0.12s;
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* title */
+.title {
+  font-size: 85px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #0077ff;
+  margin-bottom: 85px;
+  text-shadow: 0px 0px 45px rgba(0, 120, 255, 0.25);
+}
+
+/* buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  width: 190px;
+  height: 52px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  cursor: pointer;
+  border: none;
+
+  transition: transform 0.25s ease, box-shadow 0.35s ease;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+}
+
+/* explore */
+.btn-explore {
+  background: #0077ff;
+  color: #111;
+  box-shadow: 0 0 14px rgba(0, 119, 255, 0.25);
+}
+
+.btn-explore:hover {
+  box-shadow: 0 0 32px rgba(0, 119, 255, 0.6);
+}
+
+/* support */
+.btn-support {
+  background: rgba(10, 10, 10, 0.9);
+  color: #fff;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
+}
+
+.btn-support:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.85);
+}
+
+.arrow {
+  font-size: 18px;
+  font-weight: 800;
+}
