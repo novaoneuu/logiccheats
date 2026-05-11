@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
   title.classList.remove("play");
   buttons.classList.remove("play");
 
-  void title.offsetWidth; // force reset
+  void title.offsetWidth;
 
   title.classList.add("play");
   buttons.classList.add("play");
