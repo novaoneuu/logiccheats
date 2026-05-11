@@ -2,9 +2,17 @@ function go(path) {
   window.location.href = path;
 }
 
-/* force reload animation replay */
-window.addEventListener("load", () => {
-  document.body.classList.remove("loaded");
-  void document.body.offsetWidth;
-  document.body.classList.add("loaded");
+window.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector(".title");
+  const buttons = document.querySelector(".buttons");
+
+  title.style.animation = "none";
+  buttons.style.animation = "none";
+
+  // force reflow (this is the magic fix)
+  void title.offsetWidth;
+
+  title.style.animation = "popIn 0.5s ease-out forwards";
+  buttons.style.animation = "popIn 0.5s ease-out forwards";
+  buttons.style.animationDelay = "0.12s";
 });
