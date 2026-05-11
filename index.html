@@ -73,55 +73,54 @@
       flex-wrap: wrap;
     }
 
-    .btn {
-      padding: 14px 30px;
-      border-radius: 14px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.2s ease;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0px 10px 30px rgba(0,0,0,0.35);
-      border: none;
-    }
+<style>
+  .btn {
+    width: 190px;
+    height: 52px;
+    justify-content: center;
+    padding: 0;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.35s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+  }
 
-    .btn:hover {
-      transform: scale(1.03);
-    }
+  .btn:hover {
+    transform: scale(1.08);
+  }
 
-    .btn-explore {
-      background: #0077ff;
-      color: #111111;
-    }
+  /* EXPLORE (blue main glow) */
+  .btn-explore {
+    background: #0077ff;
+    color: #111;
+    box-shadow: 0 0 14px rgba(0, 119, 255, 0.25);
+  }
 
-    .btn-support {
-      background: rgba(10, 10, 10, 0.85);
-      color: #ffffff;
-    }
+  .btn-explore:hover {
+    box-shadow: 0 0 30px rgba(0, 119, 255, 0.6);
+  }
 
-    .arrow {
-      font-size: 18px;
-      font-weight: 800;
-    }
+  /* SUPPORT (separate dark glow, no blue influence) */
+  .btn-support {
+    background: rgba(10, 10, 10, 0.9);
+    color: #ffffff;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
+  }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 55px;
-        margin-bottom: 70px;
-      }
+  .btn-support:hover {
+    box-shadow: 0 0 28px rgba(0, 0, 0, 0.85);
+  }
 
-      .btn {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .buttons {
-        width: 100%;
-      }
-    }
-  </style>
+  .arrow {
+    font-size: 18px;
+    font-weight: 800;
+  }
+</style>
 </head>
 
 <body>
