@@ -40,7 +40,7 @@ body {
   z-index: 2;
 }
 
-/* ===== ENTRY ANIMATION ===== */
+/* ===== POP IN ===== */
 .title {
   font-size: 85px;
   font-weight: 800;
@@ -76,20 +76,12 @@ body {
   }
 }
 
-/* ===== LIVING TITLE (DELAYED START) ===== */
+/* ===== ALIVE SHAKE (DELAYED PROPERLY) ===== */
 .title {
-  animation: popIn 0.5s ease-out forwards;
-  animation-fill-mode: forwards;
+  animation: popIn 0.5s ease-out forwards, floatShake 6s ease-in-out infinite;
+  animation-delay: 0s, 1.5s; /* 👈 THIS is the correct way */
 }
 
-.title::after {
-  content: "";
-  display: block;
-  animation: floatShake 6s ease-in-out infinite;
-  animation-delay: 1.5s; /* 👈 THIS IS THE KEY */
-}
-
-/* apply shake directly but delayed */
 @keyframes floatShake {
   0%   { transform: translate(0px, 0px); }
   20%  { transform: translate(0.6px, -0.4px); }
@@ -121,7 +113,6 @@ body {
   transform: scale(1.08);
 }
 
-/* explore */
 .btn-explore {
   background: #0077ff;
   color: #111;
@@ -132,7 +123,6 @@ body {
   box-shadow: 0 0 32px rgba(0, 119, 255, 0.6);
 }
 
-/* support */
 .btn-support {
   background: rgba(10, 10, 10, 0.9);
   color: white;
