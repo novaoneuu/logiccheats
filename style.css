@@ -14,7 +14,6 @@ body {
   overflow: hidden;
 }
 
-/* glow background */
 .glow {
   position: absolute;
   width: 700px;
@@ -35,13 +34,12 @@ body {
   right: -300px;
 }
 
-/* layout */
 .container {
   text-align: center;
   z-index: 2;
 }
 
-/* SAFE DEFAULT STATE (VISIBLE ALWAYS) */
+/* ALWAYS VISIBLE BASE */
 .title,
 .buttons {
   opacity: 1;
@@ -49,7 +47,7 @@ body {
   filter: none;
 }
 
-/* animation only when class is added */
+/* animation trigger */
 .play {
   animation: popIn 0.5s ease-out forwards;
 }
@@ -71,17 +69,13 @@ body {
   }
 }
 
-/* title */
 .title {
   font-size: 85px;
   font-weight: 800;
-  letter-spacing: -2px;
   color: #0077ff;
   margin-bottom: 85px;
-  text-shadow: 0px 0px 45px rgba(0, 120, 255, 0.25);
 }
 
-/* buttons */
 .buttons {
   display: flex;
   justify-content: center;
@@ -99,7 +93,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
 
   cursor: pointer;
   border: none;
@@ -111,7 +104,6 @@ body {
   transform: scale(1.08);
 }
 
-/* explore */
 .btn-explore {
   background: #0077ff;
   color: #111;
@@ -122,18 +114,12 @@ body {
   box-shadow: 0 0 32px rgba(0, 119, 255, 0.6);
 }
 
-/* support */
 .btn-support {
   background: rgba(10, 10, 10, 0.9);
-  color: #fff;
+  color: white;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
 }
 
 .btn-support:hover {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.85);
-}
-
-.arrow {
-  font-size: 18px;
-  font-weight: 800;
 }
