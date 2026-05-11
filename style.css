@@ -40,7 +40,7 @@ body {
   z-index: 2;
 }
 
-/* ===== ANIMATION ENTRY ===== */
+/* ===== ENTRY ANIMATION ===== */
 .title {
   font-size: 85px;
   font-weight: 800;
@@ -51,7 +51,7 @@ body {
   transform: translateY(45px);
   filter: blur(6px);
 
-  animation: popIn 0.5s ease-out forwards, floatShake 6s ease-in-out infinite;
+  animation: popIn 0.5s ease-out forwards;
 }
 
 .buttons {
@@ -76,7 +76,20 @@ body {
   }
 }
 
-/* 👇 subtle living motion */
+/* ===== LIVING TITLE (DELAYED START) ===== */
+.title {
+  animation: popIn 0.5s ease-out forwards;
+  animation-fill-mode: forwards;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  animation: floatShake 6s ease-in-out infinite;
+  animation-delay: 1.5s; /* 👈 THIS IS THE KEY */
+}
+
+/* apply shake directly but delayed */
 @keyframes floatShake {
   0%   { transform: translate(0px, 0px); }
   20%  { transform: translate(0.6px, -0.4px); }
