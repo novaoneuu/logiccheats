@@ -30,8 +30,8 @@
       position: absolute;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(0, 170, 255, 0.35), transparent 70%);
-      filter: blur(60px);
+      background: radial-gradient(circle, rgba(0, 120, 255, 0.25), transparent 70%);
+      filter: blur(70px);
       top: -200px;
       left: -200px;
       pointer-events: none;
@@ -41,8 +41,8 @@
       position: absolute;
       width: 700px;
       height: 700px;
-      background: radial-gradient(circle, rgba(0, 90, 255, 0.25), transparent 70%);
-      filter: blur(80px);
+      background: radial-gradient(circle, rgba(0, 70, 200, 0.22), transparent 70%);
+      filter: blur(90px);
       bottom: -250px;
       right: -250px;
       pointer-events: none;
@@ -61,26 +61,28 @@
       font-size: 85px;
       font-weight: 800;
       letter-spacing: -2px;
-      background: linear-gradient(90deg, #00c8ff, #0077ff);
+      background: linear-gradient(90deg, #0077ff, #003cff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 45px;
-      text-shadow: 0px 0px 40px rgba(0, 170, 255, 0.25);
+      margin-bottom: 70px;
+      text-shadow: 
+        0px 0px 40px rgba(0, 120, 255, 0.18),
+        0px 0px 2px rgba(0, 0, 0, 0.8);
+      -webkit-text-stroke: 1px rgba(0, 0, 0, 0.35);
     }
 
     .buttons {
       display: flex;
       justify-content: center;
-      gap: 18px;
+      gap: 22px;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 14px 28px;
+      padding: 14px 30px;
       border-radius: 14px;
       font-size: 16px;
       font-weight: 700;
-      border: none;
       cursor: pointer;
       transition: 0.2s ease;
       display: flex;
@@ -94,14 +96,15 @@
     }
 
     .btn-explore {
-      background: #00c8ff;
+      background: #0077ff;
       color: #111111;
+      border: 1px solid rgba(0, 0, 0, 0.9);
     }
 
     .btn-support {
-      background: rgba(10, 10, 10, 0.8);
+      background: rgba(10, 10, 10, 0.85);
       color: #ffffff;
-      border: 1px solid rgba(0, 200, 255, 0.25);
+      border: 1px solid rgba(0, 119, 255, 0.85);
     }
 
     .arrow {
@@ -112,6 +115,7 @@
     @media (max-width: 600px) {
       h1 {
         font-size: 55px;
+        margin-bottom: 60px;
       }
 
       .btn {
