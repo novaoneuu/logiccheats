@@ -1,20 +1,14 @@
-console.log("JS loaded");
+console.log("script running");
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("mousemove", (e) => {
   const glow = document.querySelector(".glow");
   const glow2 = document.querySelector(".glow2");
 
-  console.log("glow:", glow, "glow2:", glow2);
+  if (!glow || !glow2) return;
 
-  document.addEventListener("mousemove", (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 25;
-    const y = (e.clientY / window.innerHeight - 0.5) * 25;
+  const x = (e.clientX / window.innerWidth - 0.5) * 15;
+  const y = (e.clientY / window.innerHeight - 0.5) * 15;
 
-    glow.style.transform = `translate(${x}px, ${y}px)`;
-    glow2.style.transform = `translate(${-x}px, ${-y}px)`;
-  });
-
-  window.go = (path) => {
-    window.location.href = path;
-  };
+  glow.style.transform = `translate(${x}px, ${y}px)`;
+  glow2.style.transform = `translate(${-x}px, ${-y}px)`;
 });
