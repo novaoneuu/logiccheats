@@ -1,5 +1,5 @@
 window.addEventListener("pageshow", () => {
-  const el = document.querySelector(".glass");
+  const el = document.querySelector(".container");
 
   el.classList.remove("animate");
   void el.offsetWidth;
