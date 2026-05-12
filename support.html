@@ -10,6 +10,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./support.css">
+
+  <!-- 🔥 FIX: forces consistent rendering on normal refresh -->
+  <script>
+    window.addEventListener("pageshow", () => {
+      document.documentElement.style.display = "none";
+      requestAnimationFrame(() => {
+        document.documentElement.style.display = "";
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -21,7 +31,7 @@
     <a class="back" href="https://logiccheats.xyz">← Back</a>
   </div>
 
-  <div class="page show">
+  <div class="page">
     <div class="top">
       <h1 class="title">Support</h1>
       <p class="subtitle">Need help? Pick a section below.</p>
@@ -29,21 +39,21 @@
 
     <div class="cards">
 
-      <a class="card" href="https://discord.gg/JCGQtjuQjX">
+      <a class="card" href="https://discord.gg/JCGQtjuQjX" target="_blank" rel="noopener noreferrer">
         <div class="card-title discord">Discord</div>
         <div class="card-text">
           Join our Discord to play with other users or ask questions anytime.
         </div>
       </a>
 
-      <a class="card" href="https://logiccheats.xyz/faq">
+      <a class="card" href="https://logiccheats.xyz/faq" target="_blank" rel="noopener noreferrer">
         <div class="card-title">FAQ</div>
         <div class="card-text">
           Find answers to common questions and quick help guides.
         </div>
       </a>
 
-      <a class="card" href="https://logiccheats.xyz/contact">
+      <a class="card" href="https://logiccheats.xyz/contact" target="_blank" rel="noopener noreferrer">
         <div class="card-title">Contact</div>
         <div class="card-text">
           Reach out to us directly for support or inquiries.
