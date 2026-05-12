@@ -49,19 +49,20 @@ body {
 }
 
 /* animation */
-.title {
-  font-size: 85px;
-  font-weight: 800;
-  color: #0077ff;
-  margin-bottom: 85px;
-
+body.play .title {
   opacity: 0;
   transform: translateY(40px);
   filter: blur(8px);
-
   animation: popIn 0.5s ease-out forwards;
 }
 
+body.play .buttons {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(8px);
+  animation: popIn 0.5s ease-out forwards;
+  animation-delay: 0.12s;
+}
 .buttons {
   display: flex;
   justify-content: center;
