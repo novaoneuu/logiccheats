@@ -11,7 +11,6 @@ html, body {
   background: #05070e;
 }
 
-/* layout */
 body {
   display: flex;
   justify-content: center;
@@ -21,7 +20,7 @@ body {
   overflow: hidden;
 }
 
-/* glow blobs (stable fixed positioning) */
+/* glow */
 .glow {
   position: fixed;
   width: 700px;
@@ -30,6 +29,7 @@ body {
   filter: blur(90px);
   top: -250px;
   left: -250px;
+  pointer-events: none;
 }
 
 .glow2 {
@@ -40,6 +40,7 @@ body {
   filter: blur(110px);
   bottom: -300px;
   right: -300px;
+  pointer-events: none;
 }
 
 .container {
@@ -47,11 +48,18 @@ body {
   z-index: 2;
 }
 
+/* animation */
 .title {
   font-size: 85px;
   font-weight: 800;
   color: #0077ff;
   margin-bottom: 85px;
+
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(8px);
+
+  animation: popIn 0.5s ease-out forwards;
 }
 
 .buttons {
@@ -59,8 +67,24 @@ body {
   justify-content: center;
   gap: 22px;
   flex-wrap: wrap;
+
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(8px);
+
+  animation: popIn 0.5s ease-out forwards;
+  animation-delay: 0.12s;
 }
 
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* buttons */
 .btn {
   width: 190px;
   height: 52px;
@@ -82,7 +106,7 @@ body {
   transform: scale(1.08);
 }
 
-/* explore glow */
+/* explore */
 .btn-explore {
   background: #0077ff;
   color: #111;
@@ -94,7 +118,7 @@ body {
               0 0 60px rgba(0, 119, 255, 0.35);
 }
 
-/* support glow */
+/* support */
 .btn-support {
   background: rgba(10, 10, 10, 0.9);
   color: white;
