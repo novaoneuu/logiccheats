@@ -1,5 +1,7 @@
 window.addEventListener("pageshow", () => {
-  document.body.classList.remove("play");
-  void document.body.offsetWidth;
-  document.body.classList.add("play");
+  const el = document.querySelector(".container");
+
+  el.classList.remove("animate");
+  void el.offsetWidth;
+  el.classList.add("animate");
 });
