@@ -43,32 +43,19 @@ body {
   pointer-events: none;
 }
 
-/* ===== GLASS PANEL ===== */
-.glass {
+/* content */
+.container {
   text-align: center;
   z-index: 2;
-
-  padding: 70px 80px;
-  border-radius: 28px;
-
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.55);
 }
 
-/* title */
 .title {
   font-size: 85px;
   font-weight: 800;
   color: #0077ff;
-  margin-bottom: 75px;
+  margin-bottom: 85px;
 }
 
-/* buttons */
 .buttons {
   display: flex;
   justify-content: center;
@@ -111,7 +98,7 @@ body {
 
 /* support */
 .btn-support {
-  background: rgba(10, 10, 10, 0.85);
+  background: rgba(10, 10, 10, 0.9);
   color: white;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
 }
