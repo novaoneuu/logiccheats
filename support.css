@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0b2d52 0%, #05070e 65%, #02040a 100%);
+  overflow-x: hidden;
+}
+
+/* glow blobs */
+.glow {
+  position: fixed;
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, rgba(0, 140, 255, 0.22), transparent 70%);
+  filter: blur(100px);
+  top: -260px;
+  left: -260px;
+  pointer-events: none;
+}
+
+.glow2 {
+  position: fixed;
+  width: 850px;
+  height: 850px;
+  background: radial-gradient(circle, rgba(0, 90, 255, 0.18), transparent 70%);
+  filter: blur(130px);
+  bottom: -300px;
+  right: -300px;
+  pointer-events: none;
+}
+
+.page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.top {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.title {
+  font-size: 70px;
+  font-weight: 800;
+  color: #0077ff;
+  margin-bottom: 14px;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  height: 180px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.45);
+
+  transition: transform 0.25s ease, border 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border: 1px solid rgba(0, 119, 255, 0.35);
+}
+
+/* animation */
+.animate {
+  opacity: 0;
+  transform: translateY(35px);
+  filter: blur(8px);
+  animation: popIn 0.6s ease-out forwards;
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    height: 160px;
+  }
+
+  .title {
+    font-size: 55px;
+  }
+}
