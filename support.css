@@ -34,7 +34,7 @@ body {
   pointer-events: none;
 }
 
-/* ===== TOP LEFT (BIGGER + CLEAN) ===== */
+/* header */
 .header {
   position: fixed;
   top: 28px;
@@ -46,27 +46,24 @@ body {
   font-size: 28px;
   font-weight: 800;
   color: #0077ff;
-  letter-spacing: -0.5px;
 }
 
 .back {
   margin-top: 10px;
   display: inline-block;
-
   font-size: 16px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255,255,255,0.45);
   text-decoration: none;
-
   transition: 0.2s ease;
 }
 
 .back:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255,255,255,0.8);
   transform: translateX(-4px);
 }
 
-/* main */
+/* page */
 .page {
   width: 100%;
   max-width: 1100px;
@@ -75,7 +72,6 @@ body {
   text-align: center;
 }
 
-/* title */
 .title {
   font-size: 70px;
   font-weight: 800;
@@ -86,10 +82,8 @@ body {
 .subtitle {
   font-size: 16px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.55);
-  max-width: 550px;
-  margin: 0 auto 70px auto;
-  line-height: 1.5;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 70px;
 }
 
 /* cards */
@@ -99,7 +93,53 @@ body {
   gap: 22px;
 }
 
-/* animation (SAFE NOW) */
+/* clickable card */
+.card {
+  text-decoration: none;
+  height: 200px;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow: 0 0 40px rgba(0,0,0,0.45);
+
+  padding: 22px;
+  text-align: left;
+
+  transition: transform 0.25s ease, border 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border: 1px solid rgba(0,119,255,0.35);
+}
+
+/* titles inside cards */
+.card-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* discord special */
+.discord {
+  color: #0077ff;
+}
+
+/* text */
+.card-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+
+/* animation */
 .animate {
   opacity: 0;
   transform: translateY(35px);
@@ -115,39 +155,13 @@ body {
   }
 }
 
-/* cards */
-.card {
-  height: 180px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.45);
-
-  transition: transform 0.25s ease, border 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border: 1px solid rgba(0, 119, 255, 0.35);
-}
-
 /* responsive */
 @media (max-width: 900px) {
   .cards {
     grid-template-columns: 1fr;
   }
 
-  .card {
-    height: 160px;
-  }
-
   .title {
     font-size: 55px;
-  }
-
-  .logo {
-    font-size: 24px;
   }
 }
