@@ -38,11 +38,40 @@ body {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 80px 30px;
+  padding: 40px 30px 80px 30px;
   position: relative;
   z-index: 2;
 }
 
+/* top left header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 70px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0077ff;
+}
+
+.back {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.back:hover {
+  color: rgba(255, 255, 255, 0.75);
+  transform: translateX(-3px);
+}
+
+/* main title */
 .top {
   text-align: center;
   margin-bottom: 70px;
@@ -79,7 +108,6 @@ body {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.45);
-
   transition: transform 0.25s ease, border 0.25s ease;
 }
 
