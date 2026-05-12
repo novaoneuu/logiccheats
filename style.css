@@ -43,10 +43,21 @@ body {
   pointer-events: none;
 }
 
-/* container */
-.container {
+/* ===== GLASS PANEL ===== */
+.glass {
   text-align: center;
   z-index: 2;
+
+  padding: 70px 80px;
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.55);
 }
 
 /* title */
@@ -54,7 +65,7 @@ body {
   font-size: 85px;
   font-weight: 800;
   color: #0077ff;
-  margin-bottom: 85px;
+  margin-bottom: 75px;
 }
 
 /* buttons */
@@ -65,7 +76,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* button base */
 .btn {
   width: 190px;
   height: 52px;
@@ -101,7 +111,7 @@ body {
 
 /* support */
 .btn-support {
-  background: rgba(10, 10, 10, 0.9);
+  background: rgba(10, 10, 10, 0.85);
   color: white;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
 }
@@ -111,7 +121,7 @@ body {
               0 0 60px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== ENTRY ANIMATION (WHOLE CONTAINER) ===== */
+/* entry animation */
 .animate {
   opacity: 0;
   transform: translateY(40px);
