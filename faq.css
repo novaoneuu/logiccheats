@@ -5,8 +5,14 @@
   font-family: "Inter", sans-serif;
 }
 
+/* 🔥 HARD FIX: prevents weird blank/unstyled refresh */
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: #05070e;
+}
+
 body {
-  min-height: 100vh;
   background: radial-gradient(circle at top, #0b2d52 0%, #05070e 65%, #02040a 100%);
   overflow-x: hidden;
 }
@@ -79,8 +85,10 @@ body {
 .item {
   padding: 18px 20px;
   border-radius: 16px;
+
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.07);
+
   cursor: pointer;
   transition: 0.25s ease;
 }
@@ -97,7 +105,7 @@ body {
   align-items: center;
 }
 
-/* question text */
+/* QUESTION DEFAULT */
 .q-text {
   font-size: 16px;
   font-weight: 800;
@@ -105,11 +113,16 @@ body {
   transition: 0.25s ease;
 }
 
-/* arrow FIXED spacing */
+/* 🔥 ONLY HOVER makes it blue */
+.item:hover .q-text {
+  color: #0077ff;
+}
+
+/* arrow */
 .arrow {
   margin-left: 18px;
-  color: rgba(255,255,255,0.4);
   font-size: 18px;
+  color: rgba(255,255,255,0.4);
   transition: 0.25s ease;
 }
 
@@ -127,19 +140,13 @@ body {
   transition: 0.3s ease;
 }
 
-/* ACTIVE STATE */
+/* open state */
 .item.active .a {
   max-height: 200px;
   opacity: 1;
 }
 
-/* arrow rotates */
 .item.active .arrow {
   transform: rotate(90deg);
-  color: #0077ff;
-}
-
-/* 🔥 question turns blue when active */
-.item.active .q-text {
   color: #0077ff;
 }
