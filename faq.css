@@ -48,21 +48,6 @@ body {
   color: #0077ff;
 }
 
-.back {
-  margin-top: 10px;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.45);
-  text-decoration: none;
-  transition: 0.2s ease;
-}
-
-.back:hover {
-  color: rgba(255,255,255,0.8);
-  transform: translateX(-4px);
-}
-
 /* page */
 .page {
   max-width: 900px;
@@ -87,7 +72,7 @@ body {
   color: rgba(255,255,255,0.55);
 }
 
-/* faq */
+/* FAQ */
 .faq {
   display: flex;
   flex-direction: column;
@@ -104,6 +89,8 @@ body {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
+  cursor: pointer;
+
   transition: 0.25s ease;
 }
 
@@ -116,12 +103,24 @@ body {
   font-size: 16px;
   font-weight: 800;
   color: white;
-  margin-bottom: 8px;
 }
 
 .a {
+  margin-top: 10px;
   font-size: 14px;
   font-weight: 600;
   color: rgba(255,255,255,0.55);
   line-height: 1.5;
+
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+
+  transition: 0.3s ease;
+}
+
+/* active open state */
+.item.active .a {
+  max-height: 200px;
+  opacity: 1;
 }
