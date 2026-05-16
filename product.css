@@ -72,12 +72,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  background: rgba(5, 7, 14, 0.65);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+  border-bottom: none;
 }
 
+/* logo */
 .logo {
   font-size: 20px;
   font-weight: 900;
@@ -97,40 +96,52 @@ body {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.85);
-  padding: 10px 16px;
+  padding: 11px 18px;
   border-radius: 14px;
   cursor: pointer;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 14px;
-  transition: 0.2s ease;
+  transition: 0.22s ease;
+  transform: scale(1);
 }
 
-.navbtn:hover {
-  border-color: rgba(0, 140, 255, 0.45);
-  box-shadow: 0 0 20px rgba(0, 140, 255, 0.2);
+.nav-center:hover .navbtn {
+  transform: scale(0.92);
+  opacity: 0.7;
+}
+
+.nav-center .navbtn:hover {
+  transform: scale(1.15);
+  opacity: 1;
+  border-color: rgba(0, 140, 255, 0.5);
+  box-shadow: 0 0 25px rgba(0, 140, 255, 0.25);
 }
 
 .navbtn.active {
   background: linear-gradient(90deg, #00b7ff, #0077ff);
   color: #0b0e16;
   border: none;
+  opacity: 1;
 }
 
 /* support button */
 .support-btn {
   text-decoration: none;
-  font-weight: 800;
-  font-size: 14px;
-  padding: 10px 16px;
-  border-radius: 14px;
+  font-weight: 900;
+  font-size: 15px;
+  padding: 12px 18px;
+  border-radius: 15px;
   background: linear-gradient(90deg, #00b7ff, #0077ff);
   color: #0b0e16;
   transition: 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .support-btn:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 35px rgba(0, 119, 255, 0.55);
+  transform: scale(1.12);
+  box-shadow: 0 0 40px rgba(0, 119, 255, 0.6);
 }
 
 /* main content */
