@@ -13,26 +13,28 @@ const productSets = {
   test2: [
     { name: "Product X", desc: "This is a test product for category 2." },
     { name: "Product Y", desc: "Another test product for category 2." },
-    { name: "Product Z", desc: "Category 2 product example." }
+    { name: "Product Z", desc: "Category 2 product example." },
+    { name: "Product Q", desc: "Extra test product for scrolling." }
   ],
   test3: [
     { name: "Premium Pack 1", desc: "This is a test product for category 3." },
     { name: "Premium Pack 2", desc: "Another test product for category 3." },
     { name: "Premium Pack 3", desc: "Category 3 product example." },
-    { name: "Premium Pack 4", desc: "Extra test product for scrolling." }
+    { name: "Premium Pack 4", desc: "Extra test product for scrolling." },
+    { name: "Premium Pack 5", desc: "Extra test product for scrolling." }
   ]
 };
 
 function renderProducts(tab) {
   productsEl.innerHTML = "";
 
-  productSets[tab].forEach(p => {
+  productSets[tab].forEach(product => {
     const card = document.createElement("div");
     card.className = "product-card";
 
     card.innerHTML = `
-      <div class="product-name">${p.name}</div>
-      <div class="product-desc">${p.desc}</div>
+      <div class="product-name">${product.name}</div>
+      <div class="product-desc">${product.desc}</div>
       <button class="product-buy">View →</button>
     `;
 
@@ -40,12 +42,11 @@ function renderProducts(tab) {
   });
 }
 
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
     buttons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    renderProducts(btn.dataset.tab);
+    button.classList.add("active");
+    renderProducts(button.dataset.tab);
   });
 });
 
