@@ -13,6 +13,7 @@ html, body {
 
 body {
   overflow-x: hidden;
+  overflow-y: auto;
   min-height: 100vh;
   position: relative;
   background: radial-gradient(circle at top, #0d2a4f 0%, #05070e 60%, #02040a 100%);
@@ -20,7 +21,7 @@ body {
 
 /* animated grid background */
 .bg-grid {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
@@ -29,6 +30,7 @@ body {
   mask-image: radial-gradient(circle at center, black 40%, transparent 75%);
   animation: gridMove 8s linear infinite;
   pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes gridMove {
@@ -38,13 +40,14 @@ body {
 
 /* glow blobs */
 .glow {
-  position: absolute;
+  position: fixed;
   width: 800px;
   height: 800px;
   border-radius: 50%;
   filter: blur(130px);
   pointer-events: none;
   opacity: 0.9;
+  z-index: 0;
 }
 
 .glow-top {
@@ -61,13 +64,18 @@ body {
 
 /* navbar */
 .navbar {
-  position: relative;
-  z-index: 5;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   width: 100%;
   padding: 18px 34px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  background: rgba(5, 7, 14, 0.65);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .logo {
@@ -78,70 +86,34 @@ body {
   letter-spacing: -0.5px;
 }
 
-/* center nav */
+/* center nav buttons */
 .nav-center {
   display: flex;
-  gap: 20px;
+  gap: 14px;
   align-items: center;
 }
 
-/* dropdown */
-.dropdown {
-  position: relative;
-}
-
-.dropbtn {
+.navbtn {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.85);
   padding: 10px 16px;
   border-radius: 14px;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 14px;
   transition: 0.2s ease;
 }
 
-.dropbtn:hover {
+.navbtn:hover {
   border-color: rgba(0, 140, 255, 0.45);
   box-shadow: 0 0 20px rgba(0, 140, 255, 0.2);
 }
 
-/* dropdown menu */
-.dropdown-menu {
-  position: absolute;
-  top: 50px;
-  left: 0;
-  width: 160px;
-  background: rgba(10, 10, 10, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(18px);
-  border-radius: 16px;
-  padding: 10px;
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.6);
-}
-
-.dropdown-menu a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 700;
-  font-size: 13px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  transition: 0.2s ease;
-}
-
-.dropdown-menu a:hover {
-  background: rgba(0, 140, 255, 0.15);
-  color: #00b7ff;
-}
-
-/* open state */
-.dropdown.open .dropdown-menu {
-  display: flex;
+.navbtn.active {
+  background: linear-gradient(90deg, #00b7ff, #0077ff);
+  color: #0b0e16;
+  border: none;
 }
 
 /* support button */
@@ -165,12 +137,12 @@ body {
 .content {
   position: relative;
   z-index: 5;
-  padding: 90px 40px;
+  padding: 80px 40px;
   text-align: center;
 }
 
 .page-title {
-  font-size: 60px;
+  font-size: clamp(46px, 5vw, 70px);
   font-weight: 900;
   background: linear-gradient(90deg, #00c3ff, #0077ff, #6a5cff);
   -webkit-background-clip: text;
@@ -183,4 +155,65 @@ body {
   font-size: 16px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 60px;
+}
+
+/* product cards */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 140px;
+}
+
+.product-card {
+  padding: 26px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  text-align: left;
+  transition: 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 140, 255, 0.35);
+  box-shadow: 0 0 35px rgba(0, 140, 255, 0.15);
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.product-desc {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.product-buy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 900;
+  border: none;
+  cursor: pointer;
+  background: rgba(0, 140, 255, 0.15);
+  color: #00b7ff;
+  transition: 0.2s ease;
+}
+
+.product-buy:hover {
+  background: rgba(0, 140, 255, 0.25);
 }
