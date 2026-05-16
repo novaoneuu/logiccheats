@@ -1,7 +1,7 @@
 window.addEventListener("pageshow", () => {
-  const el = document.querySelector(".container");
+  const card = document.querySelector(".card");
 
-  el.classList.remove("animate");
-  void el.offsetWidth;
-  el.classList.add("animate");
+  card.classList.remove("animate");
+  void card.offsetWidth;
+  card.classList.add("animate");
 });
