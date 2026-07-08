@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./style.css?v=2">
+  <link rel="stylesheet" href="./style.css?v=3">
 </head>
 
 <body>
@@ -21,15 +21,45 @@
   <div class="glow glow-top"></div>
   <div class="glow glow-bottom"></div>
 
-  <main class="card animate">
-    <h1 class="title">Logic Cheats</h1>
-    <p class="subtitle">Clean accounts, macros, and cheats.</p>
+  <section class="hero">
+    <main class="card animate">
+      <h1 class="title">Logic Cheats</h1>
 
-    <div class="buttons">
-      <button class="btn btn-primary" onclick="location.href='/product'">Browse &rarr;</button>
-    </div>
-  </main>
+      <p class="subtitle">
+        Clean accounts, macros, and cheats.
+      </p>
 
-  <script src="./script.js?v=2"></script>
+      <div class="buttons">
+        <button class="btn btn-primary" onclick="scrollProducts()">
+          Browse →
+        </button>
+      </div>
+
+      <div class="scroll-arrow">
+        ↓
+      </div>
+    </main>
+  </section>
+
+
+  <section id="products" class="page-section">
+    <h2>Featured Products</h2>
+    <p>Explore our latest products.</p>
+  </section>
+
+
+  <section class="page-section">
+    <h2>Why Logic Cheats?</h2>
+    <p>Fast delivery, quality products, and support.</p>
+  </section>
+
+
+  <section class="page-section">
+    <h2>FAQ</h2>
+    <p>Need help? Find answers here.</p>
+  </section>
+
+
+  <script src="./script.js?v=3"></script>
 </body>
 </html>
