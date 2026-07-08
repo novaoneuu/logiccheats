@@ -3,63 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Logic Cheats</title>
 
-  <link rel="icon" href="/logo.png" sizes="32x32">
-  <link rel="icon" href="/logo.png" sizes="16x16">
-  <link rel="apple-touch-icon" href="/logo.png">
+  <link rel="icon" href="/logo.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./style.css?v=3">
+  <link rel="stylesheet" href="./style.css?v=4">
 </head>
 
 <body>
+
+  <nav class="navbar">
+    <button onclick="scrollHome()">Home</button>
+    <button onclick="scrollShop()">Shop</button>
+    <button onclick="scrollSupport()">Support</button>
+    <button onclick="scrollStatus()">Status</button>
+  </nav>
+
+
   <div class="bg-grid"></div>
+
   <div class="glow glow-top"></div>
   <div class="glow glow-bottom"></div>
 
+
   <section class="hero">
+
     <main class="card animate">
-      <h1 class="title">Logic Cheats</h1>
+
+      <h1 class="title">
+        Logic Cheats
+      </h1>
 
       <p class="subtitle">
         Clean accounts, macros, and cheats.
       </p>
 
+
       <div class="buttons">
-        <button class="btn btn-primary" onclick="scrollProducts()">
+
+        <button class="btn btn-primary" onclick="scrollShop()">
           Browse →
         </button>
+
       </div>
+
 
       <div class="scroll-arrow">
         ↓
       </div>
+
     </main>
+
   </section>
 
 
-  <section id="products" class="page-section">
-    <h2>Featured Products</h2>
-    <p>Explore our latest products.</p>
+
+  <section id="shop" class="page-section">
+
+    <h2>
+      Featured Products
+    </h2>
+
+    <p>
+      Explore our latest products.
+    </p>
+
   </section>
 
 
-  <section class="page-section">
-    <h2>Why Logic Cheats?</h2>
-    <p>Fast delivery, quality products, and support.</p>
+  <section id="support" class="page-section">
+
+    <h2>
+      Support
+    </h2>
+
+    <p>
+      Get help whenever you need it.
+    </p>
+
   </section>
 
 
-  <section class="page-section">
-    <h2>FAQ</h2>
-    <p>Need help? Find answers here.</p>
+  <section id="status" class="page-section">
+
+    <h2>
+      Status
+    </h2>
+
+    <p>
+      All systems operational.
+    </p>
+
   </section>
 
 
-  <script src="./script.js?v=3"></script>
+<script src="./script.js?v=4"></script>
+
 </body>
 </html>
