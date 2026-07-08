@@ -221,38 +221,18 @@ body {
 
 
 .card {
-
-  width:92%;
-
-  max-width:750px;
-
-
-  padding:60px;
-
-
-  text-align:center;
-
-
-  border-radius:30px;
-
-
-  background:
-  rgba(255,255,255,.03);
-
-
-  border:
-  1px solid rgba(255,255,255,.07);
-
-
-  backdrop-filter:blur(18px);
-
-
-  box-shadow:
-  0 0 70px rgba(0,140,255,.14);
-
-
+  z-index: 5;
+  text-align: center;
+  width: 92%;
+  max-width: 750px;
+  padding: 60px 60px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 0 70px rgba(0, 140, 255, 0.14);
+  transition: filter 0.4s ease, opacity 0.4s ease;
 }
-
 
 
 .title {
