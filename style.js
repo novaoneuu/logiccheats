@@ -1,120 +1,61 @@
 window.addEventListener("pageshow", () => {
-
   const card = document.querySelector(".card");
 
   card.classList.remove("animate");
-
   void card.offsetWidth;
-
   card.classList.add("animate");
-
 });
 
 
-
 function scrollHome() {
-
   window.scrollTo({
-
-    top:0,
-
-    behavior:"smooth"
-
+    top: 0,
+    behavior: "smooth"
   });
-
 }
-
 
 
 function scrollShop() {
-
-  document
-  .querySelector("#shop")
-  .scrollIntoView({
-
-    behavior:"smooth"
-
+  document.querySelector("#shop").scrollIntoView({
+    behavior: "smooth"
   });
-
 }
-
 
 
 function scrollSupport() {
-
-  document
-  .querySelector("#support")
-  .scrollIntoView({
-
-    behavior:"smooth"
-
+  document.querySelector("#support").scrollIntoView({
+    behavior: "smooth"
   });
-
 }
-
 
 
 function scrollStatus() {
-
-  document
-  .querySelector("#status")
-  .scrollIntoView({
-
-    behavior:"smooth"
-
+  document.querySelector("#status").scrollIntoView({
+    behavior: "smooth"
   });
-
 }
-
-
 
 
 window.addEventListener("scroll", () => {
 
+  const card = document.querySelector(".card");
+  const navbar = document.querySelector(".navbar");
 
-  const hero =
-  document.querySelector(".hero");
-
-
-  const navbar =
-  document.querySelector(".navbar");
+  const scroll = window.scrollY;
 
 
-  let scroll =
-  window.scrollY;
+  const blurAmount = Math.min(scroll / 15, 20);
+  const opacityAmount = Math.max(1 - scroll / 400, 0);
 
 
-
-  let blur =
-  Math.min(scroll / 18, 18);
-
+  card.style.filter = `blur(${blurAmount}px)`;
+  card.style.opacity = opacityAmount;
 
 
-  let opacity =
-  Math.max(1 - scroll / 450, 0);
-
-
-
-  hero.style.filter =
-  `blur(${blur}px)`;
-
-
-  hero.style.opacity =
-  opacity;
-
-
-
-  if(scroll > 150) {
-
+  if (scroll > 150) {
     navbar.classList.add("show");
-
-  }
-
-  else {
-
+  } else {
     navbar.classList.remove("show");
-
   }
-
 
 });
